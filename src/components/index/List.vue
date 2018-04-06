@@ -1,13 +1,30 @@
 <template>
   <div class="list">
-    <el-table :data="CarrierList" stripe style="width: 100%;margin-bottom: 50px;" align="left" :default-sort = "{prop: 'carrierID', order: 'ascending'}">
-      <el-table-column prop="carrierID" label="carrierID" width="180"></el-table-column>
-      <el-table-column prop="name" label="name" width="180"></el-table-column>
-      <el-table-column prop="scac" label="scac"></el-table-column>
-      <el-table-column prop="shortName" label="shortName"></el-table-column>
-      <el-table-column prop="sortingKey" label="sortingKey"></el-table-column>
-      <el-table-column prop="url" label="url"></el-table-column>
+
+    <el-table :data="tableData1" stripe style="width: 100%" align="left">
+      <el-table-column prop="date" label="日期" width="180"></el-table-column>
+      <el-table-column prop="name" label="姓名" width="180"></el-table-column>
+      <el-table-column prop="address" label="地址"></el-table-column>
     </el-table>
+    <br>
+    <br>
+    <br>
+
+    <el-table :data="tableData1" style="width: 100%" align="left">
+      <el-table-column prop="date" label="日期"></el-table-column>
+      <el-table-column label="配送信息">
+        <el-table-column prop="name" label="姓名"></el-table-column>
+        <el-table-column label="地址">
+          <el-table-column prop="province" label="省份"></el-table-column>
+          <el-table-column prop="city" label="市区"></el-table-column>
+          <el-table-column prop="address" label="地址"></el-table-column>
+          <el-table-column prop="zip" label="邮编"></el-table-column>
+        </el-table-column>
+      </el-table-column>
+    </el-table>
+    <br>
+    <br>
+    <br>
 
     <el-table :data="tableData" style="width: 100%" align="left">
       <el-table-column type="expand">
@@ -87,46 +104,78 @@
           shop: '王小虎夫妻店',
           shopId: '10333'
         }],
-        CarrierList: [],
-        RouteSchedules: []
+        tableData1:[{
+            date: '2016-05-03',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-02',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-08',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-06',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-07',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }]
+//        CarrierList: []
       }
     },
     methods: {
-      initCarrierList: function () {
+      /*initList: function () {
         var self = this;
-        this.$http.get('https://www.bigschedules.com/openapi/carriers/list', {
+        this.$http.get('https://www.bigschedules.com/openapi/xxx/xxx', {
           params: {
-            appKey: "5cc3e1a0-b150-11e6-b38b-398ce8e44d39",
+            key: "abc",
           }
         })
           .then(function (response) {
-            self.CarrierList = response.data;
+            self.List = response.data;
           })
           .catch(function (error) {
             console.log(error);
           });
-      },
-      initRouteSchedules: function () {
-        var self = this;
-        this.$http.get('https://www.bigschedules.com/openapi/schedules/routeschedules', {
-          params: {
-            appKey: "5cc3e1a0-b150-11e6-b38b-398ce8e44d39",
-            porID: "P189",
-            fndID: "P355"
-          }
-        })
-          .then(function (response) {
-            self.RouteSchedules = response.data;
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      }
+      }*/
     },
     mounted(){
       this.$nextTick(function () {
-        this.initCarrierList();
-//        this.initRouteSchedules();
+//        this.initList();
       })
     }
   }
