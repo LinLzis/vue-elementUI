@@ -1,40 +1,6 @@
 <template>
   <div class="hello">
-    <!--<h1>Welcome to Your Vue.js App</h1>-->
-
-    <div style="width: 1420px; margin: 0 auto;">
-      <el-carousel indicator-position="outside" arrow="never" height="490px">
-        <el-carousel-item v-for="item in sliders" :key="item.src">
-          <img :src="'static/img/' + item.src" class="slider-img">
-        </el-carousel-item>
-      </el-carousel>
-
-      <!--<el-row>-->
-        <!--<el-col :span="12" align="left"><span style="font-size: 30px; line-height: 46px;">首播影院</span></el-col>-->
-        <!--<el-col :span="12" align="right"><span style="font-size: 20px; line-height: 46px;">更多</span></el-col>-->
-      <!--</el-row>-->
-      <h2 align="left" style="font-size: 30px;margin-top: 30px;">首播影院</h2>
-      <MovieCard :movietype.sync="type"></MovieCard>
-
-      <h2 align="left" style="font-size: 30px;margin-top: 30px;">强势接档</h2>
-      <el-steps :active="1" align-center>
-        <el-step title="本周五" icon="el-icon-star-on"></el-step>
-        <el-step title="本周五" icon="el-icon-star-on"></el-step>
-        <el-step title="本周日" icon="el-icon-star-on"></el-step>
-        <el-step title="3月22日" icon="el-icon-star-on"></el-step>
-        <el-step title="3月25日" icon="el-icon-star-on"></el-step>
-        <el-step title="3月27日" icon="el-icon-star-on"></el-step>
-      </el-steps>
-      <MovieCard movietype="next"></MovieCard>
-
-      <h2 align="left" style="font-size: 30px;margin-top: 30px;">排行榜</h2>
-      <MovieCard movietype="rank"></MovieCard>
-
-      <br>
-
-    </div>
-
-    <!--<h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -116,28 +82,18 @@
     </ul>
 
     <el-button type="primary">主要按钮</el-button>
-    <el-button type="primary">主要按钮</el-button>-->
 
   </div>
 </template>
 
 <script>
-  import MovieCard from '../movie/MovieCard.vue';
 
   export default {
-    components: {
-      MovieCard
-    },
+    components: {},
     name: 'HelloWorld',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
-        sliders: [
-          {src: 'zask.jpg', name: 'TEST001'},
-          {src: 'zylm.jpg', name: 'TEST002'},
-          {src: 'tt.jpg', name: 'TEST003'}
-        ],
-        type: 'first'
+        msg: 'Welcome to Your Vue.js App'
       }
     }
   }
@@ -159,11 +115,4 @@
     margin: 0 10px;
   }
 
-  a {
-    color: #42b983;
-  }
-
-  .slider-img {
-    height: 490px;
-  }
 </style>

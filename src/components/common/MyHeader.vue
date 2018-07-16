@@ -21,9 +21,7 @@
 </template>
 
 <script>
-  import languageMixin from '../mixins/language.mixin'
   export default {
-    mixins:[languageMixin],
     components: {},
     data(){
       return {
@@ -50,7 +48,6 @@
 <style scoped>
   .header-logo {
     width: 50px;
-    display: inline-block;
     padding: 5px 80px;
     float: left;
   }

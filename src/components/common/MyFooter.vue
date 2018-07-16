@@ -27,5 +27,7 @@
     color: azure;
     line-height: 20px;
     font-size: smaller;
+    position: fixed;
+    z-index: 5;
   }
 </style>
