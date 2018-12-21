@@ -87,13 +87,24 @@
 </template>
 
 <script>
+  import {fetchAgentList} from '@/api/agent'
 
   export default {
     components: {},
     name: 'HelloWorld',
-    data () {
+    data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        resList: []
+      }
+    },
+    created() {
+      // this.initAgentList()
+    },
+    methods: {
+      async initAgentList() {
+        const response = await fetchAgentList()
+        this.resList = response.data
       }
     }
   }
@@ -115,4 +126,46 @@
     margin: 0 10px;
   }
 
+</style>
+
+<!--LESS Style Sample-->
+<style lang="less" scoped>
+  @color-white: #FFFFFF;
+  @color-light-gray: #EFEFEF;
+  @color-orange: #FF9A2A;
+  @color-green: #7FBC39;
+  @color-blue: #00B4CF;
+  @color-deep-blue: #01869A;
+  @color-dark-blue: #2D4054;
+
+  .agent-container {
+    margin: 10px;
+    padding: 10px;
+    background: @color-white;
+    .agent {
+      display: flex;
+      align-items: center;
+    }
+    .agent-info {
+      padding: 2px 10px;
+      b {
+        color: @color-blue;
+      }
+      i {
+        font-size: 16px;
+      }
+      .building-badge {
+        display: inline-block;
+        padding: 2px 5px;
+        background: @color-orange;
+        color: @color-white;
+      }
+      .idle-badge {
+        display: inline-block;
+        padding: 2px 5px;
+        background: @color-green;
+        color: @color-white;
+      }
+    }
+  }
 </style>

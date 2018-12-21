@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from 'axios'
 import 'font-awesome/less/font-awesome.less'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'assets/css/common.less'
@@ -13,8 +12,6 @@ import store from './store'
 
 import ElementUI from 'element-ui'
 Vue.use(ElementUI)
-
-Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
