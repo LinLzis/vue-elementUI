@@ -1,18 +1,24 @@
 <template>
   <el-footer class="my-footer" height="20px">
-    &copy; 2018 Avri Li. Licensed under MIT.
+    &copy; {{year}} Avril Li. Licensed under MIT.
   </el-footer>
 </template>
 
 <script>
-  export default {
-    components: {
-    },
-    data(){
-      return {}
-    },
-    methods: {}
-  }
+export default {
+  components: {
+  },
+  data(){
+    return {}
+  },
+  computed:{
+    year(){
+      const date = new Date()
+      return date.getFullYear()
+    }
+  },
+  methods: {}
+}
 
 </script>
 

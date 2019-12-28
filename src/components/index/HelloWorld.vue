@@ -87,27 +87,27 @@
 </template>
 
 <script>
-  import {fetchAgentList} from '@/api/agent'
+import {fetchAgentList} from '@/api/agent'
 
-  export default {
-    components: {},
-    name: 'HelloWorld',
-    data() {
-      return {
-        msg: 'Welcome to Your Vue.js App',
-        resList: []
-      }
-    },
-    created() {
-      // this.initAgentList()
-    },
-    methods: {
-      async initAgentList() {
-        const response = await fetchAgentList()
-        this.resList = response.data
-      }
+export default {
+  components: {},
+  name: 'HelloWorld',
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      resList: []
+    }
+  },
+  created() {
+    // this.initAgentList()
+  },
+  methods: {
+    async initAgentList() {
+      const response = await fetchAgentList()
+      this.resList = response.data
     }
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -142,24 +142,30 @@
     margin: 10px;
     padding: 10px;
     background: @color-white;
+
     .agent {
       display: flex;
       align-items: center;
     }
+
     .agent-info {
       padding: 2px 10px;
+
       b {
         color: @color-blue;
       }
+
       i {
         font-size: 16px;
       }
+
       .building-badge {
         display: inline-block;
         padding: 2px 5px;
         background: @color-orange;
         color: @color-white;
       }
+
       .idle-badge {
         display: inline-block;
         padding: 2px 5px;
