@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <MyHeader></MyHeader>
-    <img src="./assets/logo.png">
+    <img src="./assets/logo.png" alt="">
     <router-view/>
     <MyFooter></MyFooter>
   </div>
 </template>
 
 <script>
-import MyFooter from '../src/components/common/MyFooter.vue';
-import MyHeader from '../src/components/common/MyHeader.vue';
+import MyFooter from '../src/components/common/MyFooter.vue'
+import MyHeader from '../src/components/common/MyHeader.vue'
 
 export default {
   name: 'App',

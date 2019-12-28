@@ -4,7 +4,7 @@
     <el-menu class="el-menu-demo" mode="horizontal" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b"
              :router="true" :default-active="$route.path" :class="[scrolled ? 'scrolled-header' : 'un-scroll-header']">
 
-      <img src="../../assets/logo.png" class="header-logo">
+      <img src="../../assets/logo.png" class="header-logo" alt="">
 
       <el-menu-item index="1" route="/">Home</el-menu-item>
       <el-menu-item index="2" route="/list">About</el-menu-item>
@@ -21,26 +21,26 @@
 </template>
 
 <script>
-  export default {
-    components: {},
-    data(){
-      return {
-        activeIndex: '1',
-        scrolled: false
-      }
-    },
-    props:[],
-    methods: {
-      handleScroll () {
-        this.scrolled = window.scrollY > 540;
-      }
-    },
-    mounted(){
-      this.$nextTick(function () {
-        window.addEventListener('scroll', this.handleScroll);
-      })
+export default {
+  components: {},
+  data(){
+    return {
+      activeIndex: '1',
+      scrolled: false
     }
+  },
+  props:[],
+  methods: {
+    handleScroll () {
+      this.scrolled = window.scrollY > 540
+    }
+  },
+  mounted(){
+    this.$nextTick(function () {
+      window.addEventListener('scroll', this.handleScroll)
+    })
   }
+}
 
 </script>
 
@@ -51,7 +51,7 @@
     padding: 5px 80px;
     float: left;
   }
-  .un-scroll-header {
+  /*.un-scroll-header {
     position: relative;
     opacity: 1;
   }
@@ -63,5 +63,5 @@
     z-index: 2;
     width: 100%;
     border: 0;
-  }
+  }*/
 </style>

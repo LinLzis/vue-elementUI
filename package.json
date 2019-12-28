@@ -2,7 +2,7 @@
   "name": "vue-demo",
   "version": "1.0.0",
   "description": "vue.js 2 demo",
-  "author": "Avril Li <avril.li@oocl.com>",
+  "author": "Avril Li <linxforever@vip.qq.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
